@@ -34,15 +34,6 @@ jobs:
       - uses: r-lib/actions/setup-r@master
         with:
           r-version: ${{ matrix.config.r }}
-
-      - name: Install system dependencies
-        if: runner.os == 'Linux'
-        run: |
-          while read -r cmd
-          do
-            eval sudo $cmd
-          done < <(Rscript -e 'cat(remotes::system_requirements("ubuntu", "20.04"), sep = "\n")')
-
       - name: Install dependencies
         run: |
           install.packages("remotes")
@@ -54,3 +45,5 @@ jobs:
           ./analysis/script --style_pkg=styler --style_transformers=tidyverse_style(scope = "none") files1 file2
           ./analysis/script --style_pkg=styler '--style_transformers=tidyverse_style(scope = "none")' file1 file2
           ./analysis/script --style_pkg=styler --style_transformers=tidyverse_style(scope = "none") file1 file2
+        shell: /bin/bash {0}  
+          
