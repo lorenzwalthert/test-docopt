@@ -45,5 +45,5 @@ jobs:
           ./analysis/script --style_pkg=styler --style_transformers=tidyverse_style(scope = "none") files1 file2
           ./analysis/script --style_pkg=styler '--style_transformers=tidyverse_style(scope = "none")' file1 file2
           ./analysis/script --style_pkg=styler --style_transformers=tidyverse_style(scope = "none") file1 file2
-        shell: /bin/bash {0}  
+  
           
