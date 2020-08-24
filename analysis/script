@@ -9,5 +9,6 @@ Options:
   --style_fun=<style_guide_fun>  Deprecated in favor or `style_transformers`. The styling function in style_pkg [default: tidyverse_style].
 ' -> doc
 
+print(commandArgs(TRUE))
 arguments <- docopt::docopt(doc)
 print(arguments)
