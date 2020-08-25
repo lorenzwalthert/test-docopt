@@ -39,18 +39,15 @@ jobs:
           install.packages("remotes")
           remotes::install_github('docopt/docopt.R')
         shell: Rscript {0}
-
-      - name: Check1
-        run: |
-          ./analysis/script --style_pkg=styler --style_transformers=tidyverse_style(scope = "none") files1 file2
-        shell: /bin/bash {0}  
-
       - name: Check2
         run: |
           ./analysis/script --style_pkg=styler '--style_transformers=tidyverse_style(scope = "none")' file1 file2
         shell: /bin/bash {0}  
-
       - name: Check3
         run: |
-          ./analysis/script --style_pkg=styler --style_transformers=tidyverse_style(scope = "none") file1 file2
+          ./analysis/script --style_pkg=styler "--style_transformers=tidyverse_style(scope = \"none\")" file1 file2
+        shell: /bin/bash {0}  
+      - name: Check1
+        run: |
+          ./analysis/script --style_pkg=styler --style_transformers=tidyverse_style(scope = "none") files1 file2
         shell: /bin/bash {0}  
