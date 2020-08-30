@@ -42,12 +42,27 @@ jobs:
       - name: simple
         run: |
           Rscript reprex/script fil31
-      - name: reprex-1
+      - name: single-double
         run: |
           Rscript reprex/script --style_pkg=styler '--style_transformers=tidyverse_style(scope = "none")' file1 file2
-      - name: reprex-2
+        if: always()
+      - name: single-single
+        run: |
+          Rscript reprex/script --style_pkg=styler '--style_transformers=tidyverse_style(scope = \'none\')' file1 file2
+        if: always()
+      - name: double-single
+        run: |
+          Rscript reprex/script --style_pkg=styler "--style_transformers=tidyverse_style(scope = 'none')" file1 file2
+        if: always()
+      - name: double-double
         run: |
           Rscript reprex/script --style_pkg=styler "--style_transformers=tidyverse_style(scope = \"none\")" file1 file2
-      - name: reprex-3
+        if: always()
+      - name: none-double
         run: |
           Rscript reprex/script --style_pkg=styler --style_transformers=tidyverse_style(scope = "none") files1 file2
+        if: always()
+      - name: none-single
+        run: |
+          Rscript reprex/script --style_pkg=styler --style_transformers=tidyverse_style(scope = 'none') files1 file2
+        if: always()
