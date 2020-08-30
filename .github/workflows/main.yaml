@@ -39,15 +39,15 @@ jobs:
           install.packages("remotes")
           remotes::install_github('docopt/docopt.R')
         shell: Rscript {0}
-      - name: Check0
+      - name: simple
         run: |
-          Rscript analysis/script fil31
-      - name: Check2
+          Rscript reprex/script fil31
+      - name: reprex-1
         run: |
-          Rscript analysis/script --style_pkg=styler '--style_transformers=tidyverse_style(scope = "none")' file1 file2
-      - name: Check3
+          Rscript reprex/script --style_pkg=styler '--style_transformers=tidyverse_style(scope = "none")' file1 file2
+      - name: reprex-2
         run: |
-          Rscript analysis/script --style_pkg=styler "--style_transformers=tidyverse_style(scope = \"none\")" file1 file2
-      - name: Check1
+          Rscript reprex/script --style_pkg=styler "--style_transformers=tidyverse_style(scope = \"none\")" file1 file2
+      - name: reprex-3
         run: |
-          Rscript analysis/script --style_pkg=styler --style_transformers=tidyverse_style(scope = "none") files1 file2
+          Rscript reprex/script --style_pkg=styler --style_transformers=tidyverse_style(scope = "none") files1 file2
