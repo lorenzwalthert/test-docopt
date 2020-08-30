@@ -44,13 +44,10 @@ jobs:
           Rscript analysis/script fil31
       - name: Check2
         run: |
-          analysis/script --style_pkg=styler '--style_transformers=tidyverse_style(scope = "none")' file1 file2
-        shell: Rscript {0}  
+          Rscript analysis/script --style_pkg=styler '--style_transformers=tidyverse_style(scope = "none")' file1 file2
       - name: Check3
         run: |
-          analysis/script --style_pkg=styler "--style_transformers=tidyverse_style(scope = \"none\")" file1 file2
-        shell: Rscript {0}  
+          Rscript analysis/script --style_pkg=styler "--style_transformers=tidyverse_style(scope = \"none\")" file1 file2
       - name: Check1
         run: |
-          analysis/script --style_pkg=styler --style_transformers=tidyverse_style(scope = "none") files1 file2
-        shell: Rscript {0}  
+          Rscript analysis/script --style_pkg=styler --style_transformers=tidyverse_style(scope = "none") files1 file2
