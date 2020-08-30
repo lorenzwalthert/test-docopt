@@ -41,8 +41,7 @@ jobs:
         shell: Rscript {0}
       - name: Check0
         run: |
-          analysis/script 
-        shell: Rscript {0} fie1 file2  
+          Rscript analysis/script fil31
       - name: Check2
         run: |
           analysis/script --style_pkg=styler '--style_transformers=tidyverse_style(scope = "none")' file1 file2
