@@ -1,14 +1,2 @@
 #!/usr/bin/env Rscript
-
-'style files.
-Usage:
-  style_files [--style_pkg=<style_guide_pkg>] [--style_transformers=<style_guide_transformers>] [--style_fun=<style_guide_fun>] <files>...
-Options:
-  --style_pkg=<style_guide_pkg>  Package where the style guide is stored [default: styler].
-  --style_transformers=<style_guide_transformers> The `transformers` argument supplied to the styling API from the `style_pkg` namespace [default: tidyverse_style()].
-  --style_fun=<style_guide_fun>  Deprecated in favor or `style_transformers`. The styling function in style_pkg [default: tidyverse_style].
-' -> doc
-
 print(commandArgs(TRUE))
-arguments <- docopt::docopt(doc)
-print(arguments)
